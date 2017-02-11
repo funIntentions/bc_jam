@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Sprites/oceanBackground.jpg" type="Texture" id=1]
 [ext_resource path="res://TentacleControl.gd" type="Script" id=2]
 [ext_resource path="res://quadra/body.tex" type="Texture" id=3]
 [ext_resource path="res://quadra/tentacle.tex" type="Texture" id=4]
 [ext_resource path="res://Sprites/Bubble.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Seaweed.png" type="Texture" id=6]
 
 [node name="Game" type="Node2D"]
 
@@ -101,5 +102,23 @@ randomness/gravity_strength = 0.2
 randomness/radial_accel = 0.5
 randomness/initial_size = 1.0
 randomness/final_size = 1.0
+
+[node name="Seaweed" type="Sprite" parent="."]
+
+transform/pos = Vector2( 231.398, 190.547 )
+transform/scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 6 )
+
+[node name="Seaweed1" type="Sprite" parent="."]
+
+transform/pos = Vector2( -105.415, 220.157 )
+transform/scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="Seaweed2" type="Sprite" parent="."]
+
+transform/pos = Vector2( -314.535, 205.352 )
+transform/scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 6 )
 
 
