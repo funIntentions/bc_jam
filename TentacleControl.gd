@@ -12,10 +12,10 @@ func _ready():
 
 func _process(delta):
 	if(Input.is_action_pressed("p1_radial_movement_a")):
-		get_node("Sprite/TentacleAJoint").rotate(Input.get_joy_axis(0,0)*delta)
+		get_node("BodySprite/TentacleAJoint").rotate(Input.get_joy_axis(0,0)*delta)
 	if(Input.is_action_pressed("p1_radial_movement_b")):
-		 get_node("Sprite/TentacleBJoint").rotate(Input.get_joy_axis(0,2)*delta)
+		 get_node("BodySprite/TentacleBJoint").rotate(Input.get_joy_axis(0,2)*delta)
 	if(Input.is_action_pressed("p2_radial_movement_c")):
-		get_node("Sprite/TentacleCJoint").rotate(Input.get_joy_axis(1,0)*delta)
+		get_node("BodySprite/TentacleCJoint").rotate(Input.get_joy_axis(1,0)*delta)
 	if(Input.is_action_pressed("p2_radial_movement_d")):
-		get_node("Sprite/TentacleDJoint").rotate(Input.get_joy_axis(1,2)*delta)
+		get_node("BodySprite/TentacleDJoint").rotate(Input.get_joy_axis(1,2)*delta)
