@@ -1,0 +1,90 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://TentacleControl.gd" type="Script" id=1]
+[ext_resource path="res://quadra/body.tex" type="Texture" id=2]
+[ext_resource path="res://quadra/tentacle.tex" type="Texture" id=3]
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
+
+[node name="Quadupus" type="Node2D"]
+
+transform/scale = Vector2( 0.2, 0.2 )
+script/script = ExtResource( 1 )
+rotationLimit = 1.5
+rotationSpeed = 2
+moveSpeed = Vector2( 1, 0 )
+
+[node name="BodySprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+
+[node name="TentacleAJoint" type="Node2D" parent="BodySprite"]
+
+transform/pos = Vector2( -104.46, -44.7226 )
+z/z = -1
+
+[node name="TentacleA" type="Sprite" parent="BodySprite/TentacleAJoint"]
+
+transform/pos = Vector2( -180.474, -122.195 )
+transform/rot = -209.924
+texture = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="BodySprite/TentacleAJoint/TentacleA"]
+
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -17.2795, 14.1864 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BodySprite/TentacleAJoint/TentacleA/Area2D"]
+
+transform/pos = Vector2( -17.2795, 14.1864 )
+build_mode = 0
+polygon = Vector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
+shape_range = Vector2( 0, 0 )
+trigger = false
+
+[node name="TentacleBJoint" type="Node2D" parent="BodySprite"]
+
+transform/pos = Vector2( -152.892, 106.369 )
+transform/rot = 25.0
+z/z = -1
+
+[node name="TentacleB" type="Sprite" parent="BodySprite/TentacleBJoint"]
+
+transform/pos = Vector2( -179.888, 84.5224 )
+transform/rot = 213.611
+transform/scale = Vector2( 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="TentacleCJoint" type="Node2D" parent="BodySprite"]
+
+transform/pos = Vector2( 80.9712, -54.9968 )
+transform/rot = 25.0
+z/z = -1
+
+[node name="TentacleC" type="Sprite" parent="BodySprite/TentacleCJoint"]
+
+transform/pos = Vector2( 182.337, -84.5223 )
+transform/rot = 35.0
+texture = ExtResource( 3 )
+
+[node name="TentacleDJoint" type="Node2D" parent="BodySprite"]
+
+transform/pos = Vector2( 120, 90 )
+z/z = -1
+
+[node name="TentacleD" type="Sprite" parent="BodySprite/TentacleDJoint"]
+
+transform/pos = Vector2( 106.992, 149.593 )
+transform/rot = -44.3699
+texture = ExtResource( 3 )
+
+
