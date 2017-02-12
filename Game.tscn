@@ -13,9 +13,9 @@
 
 script/source = "extends Node2D\n\nfunc _ready():\n\tpass\n\n"
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=3]
 
-script/source = "extends Node2D\n\nvar gate = load(\"res://Gate/LeafGate.tscn\")\nvar timer\nvar gateInstance\n\nfunc _ready():\n\ttimer = get_node(\"Timer\")\n\ttimer.connect(\"timeout\", self, \"spawnGate\")\n\ttimer.set_wait_time(7)\n\ttimer.start()\n\nfunc spawnGate():\n\tif(gateInstance):\n\t\tgateInstance.free()\n\tvar gate_variables = get_node(\"/root/Game/GateVariables\")\n\tgate_variables.gen_rotations()\n\tgateInstance = gate.instance()\n\tadd_child(gateInstance)\n\tvar camPosition = (get_parent().get_child(0).get_pos())\n\tset_pos(Vector2(camPosition.x + 900, camPosition.y + (rand_range(-100,100))))"
+script/source = "extends Node2D\n\nvar leaf_gate = load(\"res://Gate/LeafGate.tscn\")\nvar rock_gate = load(\"res://Gate/RockGate.tscn\")\nvar boat_gate = load(\"res://Gate/BoatGate.tscn\")\nvar timer\nvar gateInstance\n\nfunc _ready():\n\ttimer = get_node(\"Timer\")\n\ttimer.connect(\"timeout\", self, \"spawnGate\")\n\ttimer.set_wait_time(7)\n\ttimer.start()\n\nfunc spawnGate():\n\tif(gateInstance):\n\t\tgateInstance.free()\n\t\n\tvar gate_variables = get_node(\"/root/Game/GateVariables\")\n\tgate_variables.gen_rotations()\n\t\n\trandomize()\n\tvar gate_num = randi() % 3\n\t\n\tif gate_num == 0:\n\t\tgateInstance = leaf_gate.instance()\n\telif gate_num == 1:\n\t\tgateInstance = rock_gate.instance()\n\telif gate_num == 2:\n\t\tgateInstance = boat_gate.instance()\n\t\n\tadd_child(gateInstance)\n\tvar camPosition = (get_parent().get_child(0).get_pos())\n\tset_pos(Vector2(camPosition.x + 900, camPosition.y + (rand_range(-100,100))))"
 
 [node name="Game" type="Node2D"]
 
@@ -129,6 +129,7 @@ moveSpeed = Vector2( 5, 0 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 320 )
 rotation = 0.0
@@ -142,6 +143,7 @@ scroll/ignore_camera_zoom = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
+editor/display_folded = true
 transform/pos = Vector2( 1536, 0 )
 motion/scale = Vector2( 1, 1 )
 motion/offset = Vector2( 0, 0 )
@@ -155,6 +157,7 @@ texture = ExtResource( 5 )
 
 [node name="SeaweedSpawner" type="Node2D" parent="."]
 
+editor/display_folded = true
 script/script = ExtResource( 6 )
 seaweed = ExtResource( 7 )
 
@@ -167,7 +170,8 @@ autostart = false
 
 [node name="GateSpawner" type="Node2D" parent="."]
 
-script/script = SubResource( 2 )
+editor/display_folded = true
+script/script = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="GateSpawner"]
 
