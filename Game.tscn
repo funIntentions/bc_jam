@@ -7,15 +7,12 @@
 [ext_resource path="res://Sprites/OceanBackground.png" type="Texture" id=5]
 [ext_resource path="res://SeaweedSpawner.gd" type="Script" id=6]
 [ext_resource path="res://Seaweed.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Gate/GateVariables.gd" type="Script" id=8]
+[ext_resource path="res://Gate/GateSpawner.gd" type="Script" id=8]
+[ext_resource path="res://Gate/GateVariables.gd" type="Script" id=9]
 
 [sub_resource type="GDScript" id=1]
 
 script/source = "extends Node2D\n\nfunc _ready():\n\tpass\n\n"
-
-[sub_resource type="GDScript" id=3]
-
-script/source = "extends Node2D\n\nvar leaf_gate = load(\"res://Gate/LeafGate.tscn\")\nvar rock_gate = load(\"res://Gate/RockGate.tscn\")\nvar boat_gate = load(\"res://Gate/BoatGate.tscn\")\nvar timer\nvar gateInstance\n\nfunc _ready():\n\ttimer = get_node(\"Timer\")\n\ttimer.connect(\"timeout\", self, \"spawnGate\")\n\ttimer.set_wait_time(7)\n\ttimer.start()\n\nfunc spawnGate():\n\tif(gateInstance):\n\t\tgateInstance.free()\n\t\n\tvar gate_variables = get_node(\"/root/Game/GateVariables\")\n\tgate_variables.gen_rotations()\n\t\n\trandomize()\n\tvar gate_num = randi() % 3\n\t\n\tif gate_num == 0:\n\t\tgateInstance = leaf_gate.instance()\n\telif gate_num == 1:\n\t\tgateInstance = rock_gate.instance()\n\telif gate_num == 2:\n\t\tgateInstance = boat_gate.instance()\n\t\n\tadd_child(gateInstance)\n\tvar camPosition = (get_parent().get_child(0).get_pos())\n\tset_pos(Vector2(camPosition.x + 900, camPosition.y + (rand_range(-100,100))))"
 
 [node name="Game" type="Node2D"]
 
@@ -171,7 +168,7 @@ autostart = false
 [node name="GateSpawner" type="Node2D" parent="."]
 
 editor/display_folded = true
-script/script = SubResource( 3 )
+script/script = ExtResource( 8 )
 
 [node name="Timer" type="Timer" parent="GateSpawner"]
 
@@ -182,6 +179,6 @@ autostart = false
 
 [node name="GateVariables" type="Node2D" parent="."]
 
-script/script = ExtResource( 8 )
+script/script = ExtResource( 9 )
 
 
