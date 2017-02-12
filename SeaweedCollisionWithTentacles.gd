@@ -13,3 +13,5 @@ func _on_area_enter(area):
 			switched = true
 			get_parent().set_texture(noWeedSprite)
 			global.seaweeds += 1
+			var weedString = "weed"+str(int(rand_range(1,10)))
+			get_node("SamplePlayer2D").play(weedString)
