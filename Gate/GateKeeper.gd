@@ -12,7 +12,6 @@ func _process(delta):
 	
 	for piece in gate_pieces:
 		if !piece.is_touching():
-			print("Everything is not touching")
 			return;
 	
 	print("Everything is touching")

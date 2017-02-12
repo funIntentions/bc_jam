@@ -1,11 +1,8 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://QuadGate.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Quadupus.tscn" type="PackedScene" id=2]
-
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends Node2D\n\nfunc _ready():\n\tset_process(true)\n\nfunc _process(delta):\n\tset_pos(get_viewport().get_mouse_pos())"
+[ext_resource path="res://TestMask/FollowMouse.gd" type="Script" id=2]
+[ext_resource path="res://Quadupus.tscn" type="PackedScene" id=3]
 
 [node name="Root" type="Node2D"]
 
@@ -17,9 +14,10 @@ z/z = -1
 
 [node name="FollowMouse" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 435.533, 261.823 )
-script/script = SubResource( 1 )
+script/script = ExtResource( 2 )
 
-[node name="Quadupus" parent="FollowMouse" instance=ExtResource( 2 )]
+[node name="Quadupus" parent="FollowMouse" instance=ExtResource( 3 )]
 
 
