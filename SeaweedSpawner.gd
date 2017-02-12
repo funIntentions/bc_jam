@@ -10,7 +10,6 @@ func _ready():
 	timer.start()
 
 func spawnSeaweed():
-	print("seaweed spawned")
 	add_child(seaweed.instance())
 	var camPosition = (get_parent().get_child(0).get_pos())
 	set_pos(Vector2(camPosition.x + 600, camPosition.y + (rand_range(-500,100))))
