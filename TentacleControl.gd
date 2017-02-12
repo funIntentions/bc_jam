@@ -16,6 +16,7 @@ func _process(delta):
 	set_pos(get_pos()+moveSpeed)
 	get_parent().get_child(0).set_pos(get_parent().get_child(0).get_pos()+moveSpeed)
 	get_parent().get_child(1).set_pos(get_parent().get_child(1).get_pos()+moveSpeed)
+	get_parent().get_child(2).set_pos(get_parent().get_child(2).get_pos()+moveSpeed)
 	if(Input.is_action_pressed("p1_radial_movement_a")):
 		if(Input.get_joy_axis(0,0) < 0 &&  get_node("BodySprite/TentacleAJoint").get_rot() > -rotationLimit):
 			get_node("BodySprite/TentacleAJoint").rotate(Input.get_joy_axis(0,0)*delta*rotationSpeed)
