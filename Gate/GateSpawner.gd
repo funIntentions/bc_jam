@@ -31,4 +31,4 @@ func spawnGate():
 	
 	add_child(gateInstance)
 	var camPosition = (get_parent().get_child(0).get_pos())
-	set_pos(Vector2(camPosition.x + 900, camPosition.y + (rand_range(-100,100))))
+	set_pos(Vector2(camPosition.x + 1050, camPosition.y + (rand_range(-100,100))))
