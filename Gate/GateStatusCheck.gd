@@ -28,6 +28,6 @@ func _process(delta):
 		
 		if player_x >= gate_x:
 			print("Passed")
-			var sampleString = "split"+str(int(rand_range(1,4)))
+			var sampleString = "split"+str(int(rand_range(1,6)))
 			get_node("SamplePlayer2D").play(sampleString)
 			checked = true

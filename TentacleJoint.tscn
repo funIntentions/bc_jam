@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=1]
 
-[ext_resource path="res://quadra/tentacle.tex" type="Texture" id=1]
+[ext_resource path="res://Sprites/newtentacle.png" type="Texture" id=1]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -37,6 +37,7 @@ z/z = -1
 transform/pos = Vector2( -180, -122 )
 transform/rot = -209.924
 texture = ExtResource( 1 )
+offset = Vector2( -45, 0 )
 
 [node name="Area2D" type="Area2D" parent="TentacleA" groups=[ "quad_tentacle" ]]
 
