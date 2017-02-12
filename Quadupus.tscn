@@ -31,6 +31,7 @@ script/script = ExtResource( 1 )
 rotationLimit = 1.5
 rotationSpeed = 2
 moveSpeed = Vector2( 1, 0 )
+verticalMoveSpeed = Vector2( 1, 1 )
 
 [node name="BodySprite" type="Sprite" parent="."]
 
@@ -38,20 +39,29 @@ texture = ExtResource( 2 )
 
 [node name="TentacleAJoint" parent="BodySprite" instance=ExtResource( 3 )]
 
+visibility/behind_parent = true
+z/z = 0
+
 [node name="TentacleBJoint" parent="BodySprite" instance=ExtResource( 3 )]
 
+visibility/behind_parent = true
 transform/pos = Vector2( -152, 106 )
 transform/rot = 90.0
+z/z = 0
 
 [node name="TentacleCJoint" parent="BodySprite" instance=ExtResource( 3 )]
 
+visibility/behind_parent = true
 transform/pos = Vector2( 80, -54 )
 transform/rot = 270.0
+z/z = 0
 
 [node name="TentacleDJoint" parent="BodySprite" instance=ExtResource( 3 )]
 
+visibility/behind_parent = true
 transform/pos = Vector2( 120, 90 )
 transform/rot = 160.0
+z/z = 0
 
 [node name="Area2D" type="Area2D" parent="BodySprite" groups=[ "quad_body" ]]
 

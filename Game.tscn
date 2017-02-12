@@ -47,6 +47,7 @@ drag_margin/bottom = 0.2
 
 transform/pos = Vector2( 3000, 283.862 )
 transform/scale = Vector2( 0.5, 0.5 )
+z/z = 10
 config/amount = 20
 config/lifetime = 15.0
 config/half_extents = Vector2( 3000, 0 )
@@ -123,8 +124,8 @@ script/script = ExtResource( 3 )
 
 [node name="Quadupus" parent="." instance=ExtResource( 4 )]
 
+z/z = 1
 moveSpeed = Vector2( 5, 0 )
-verticalMoveSpeed = Vector2( 1, 1 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
