@@ -13,7 +13,6 @@ points = Vector2Array( 0.0771971, -55.3523, 31.7835, -46.2934, 52.4896, -19.1166
 
 [node name="Body" type="Area2D" parent="." groups=[ "gate_piece" ]]
 
-editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -1.22771, 7.12432 )
@@ -40,17 +39,17 @@ trigger = false
 [node name="Tentacle 1" parent="Body" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( -20, -8 )
-transform/rot = -30.0
+transform/rot = 320.0
 
 [node name="Tentacle 4" parent="Body" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( -30, 21 )
-transform/rot = 30.0
+transform/rot = 40.0
 
 [node name="Tentacle 2" parent="Body" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 16, -10 )
-transform/rot = -140.0
+transform/rot = 220.0
 
 [node name="Tentacle 3" parent="Body" instance=ExtResource( 3 )]
 
