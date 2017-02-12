@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://Sprites/Bubble.png" type="Texture" id=1]
 [ext_resource path="res://Bahiana.fnt" type="BitmapFont" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Gate/GateSpawner.gd" type="Script" id=8]
 [ext_resource path="res://Gate/GateVariables.gd" type="Script" id=9]
 [ext_resource path="res://Sounds/underwater.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Sounds/musicr.ogg" type="AudioStream" id=11]
 
 [sub_resource type="GDScript" id=1]
 
@@ -188,6 +189,17 @@ stream/stream = ExtResource( 10 )
 stream/play = true
 stream/loop = true
 stream/volume_db = 5.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="MusicPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 11 )
+stream/play = true
+stream/loop = true
+stream/volume_db = -10.0
 stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0
