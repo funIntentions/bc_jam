@@ -39,5 +39,7 @@ func _process(delta):
 			
 	if(Input.is_action_pressed("p1_right_trigger")):
 		set_pos(get_pos()+Vector2(0,3))
+		#set_scale(Vector2(get_scale().x+0.001, get_scale().y+0.001))
 	if(Input.is_action_pressed("p2_right_trigger")):
 		set_pos(get_pos()+Vector2(0,-3))
+		#set_scale(Vector2(get_scale().x-0.001, get_scale().y-0.001))

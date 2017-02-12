@@ -1,26 +1,23 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=7 format=1]
 
-[ext_resource path="res://Game.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Bubble.png" type="Texture" id=2]
-[ext_resource path="res://Quadupus.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Sprites/Seaweed.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Seawithoutweed.png" type="Texture" id=5]
-[ext_resource path="res://Sprites/OceanBackground.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Bubble.png" type="Texture" id=1]
+[ext_resource path="res://Quadupus.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sprites/OceanBackground.png" type="Texture" id=3]
+[ext_resource path="res://SeaweedSpawner.gd" type="Script" id=4]
+[ext_resource path="res://Seaweed.tscn" type="PackedScene" id=5]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="GDScript" id=1]
 
-custom_solver_bias = 0.0
-radius = 10.0
+script/source = "extends Node2D\n\nfunc _ready():\n\tpass\n\n"
 
 [node name="Game" type="Node2D"]
 
 transform/pos = Vector2( 529.778, 328.782 )
-script/script = ExtResource( 1 )
+script/script = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 transform/pos = Vector2( -6.10352e-05, -3.05176e-05 )
-transform/scale = Vector2( 1, 1 )
 offset = Vector2( 200, 0 )
 anchor_mode = 1
 rotating = false
@@ -47,7 +44,7 @@ config/amount = 20
 config/lifetime = 15.0
 config/half_extents = Vector2( 3000, 0 )
 config/local_space = false
-config/texture = ExtResource( 2 )
+config/texture = ExtResource( 1 )
 params/direction = 0.0
 params/spread = 1.0
 params/linear_velocity = 0.0
@@ -72,54 +69,10 @@ randomness/radial_accel = 0.5
 randomness/initial_size = 1.0
 randomness/final_size = 1.0
 
-[node name="Quadupus" parent="." instance=ExtResource( 3 )]
+[node name="Quadupus" parent="." instance=ExtResource( 2 )]
 
 moveSpeed = Vector2( 5, 0 )
 verticalMoveSpeed = Vector2( 1, 1 )
-
-[node name="Seaweed" type="Sprite" parent="."]
-
-editor/display_folded = true
-transform/pos = Vector2( 313.392, 175.035 )
-transform/scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 4 )
-
-[node name="Area2D" type="Area2D" parent="Seaweed"]
-
-input/pickable = true
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 15, 0, 0, 15, 0, 0 )
-shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Seaweed/Area2D"]
-
-transform/scale = Vector2( 15, 15 )
-shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
-
-[node name="Seaweed1" type="Sprite" parent="."]
-
-transform/pos = Vector2( -117.603, 145.919 )
-transform/scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 4 )
-
-[node name="Seaweed2" type="Sprite" parent="."]
-
-visibility/visible = false
-transform/pos = Vector2( -275.754, 180.975 )
-transform/scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 4 )
-
-[node name="Seaweed 2" type="Sprite" parent="."]
-
-transform/pos = Vector2( -275.754, 180.975 )
-transform/scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 5 )
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -145,6 +98,18 @@ motion/mirroring = Vector2( 3072, 0 )
 
 transform/scale = Vector2( 2, 2 )
 z/z = -10
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
+
+[node name="SeaweedSpawner" type="Node2D" parent="."]
+
+script/script = ExtResource( 4 )
+seaweed = ExtResource( 5 )
+
+[node name="Timer" type="Timer" parent="SeaweedSpawner"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 
