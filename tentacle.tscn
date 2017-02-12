@@ -12,6 +12,7 @@ points = Vector2Array( 4.68341, -7.53367, 4.92124, 5.78463, -33.6067, 5.07115, -
 
 [node name="Tentacle" type="Area2D" parent="." groups=[ "gate_piece" ]]
 
+transform/pos = Vector2( -19.264, 0.237827 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
