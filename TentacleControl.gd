@@ -8,6 +8,7 @@ export var verticalMoveSpeed = Vector2(1,1)
 func _ready():
 	self.set_process(true)
 	self.set_process_input(true)
+	get_parent().get_node("SamplePlayer2D").play("underwater")
 	# Called every time the node is added to the scene.
 	# Initialization here
 	pass
