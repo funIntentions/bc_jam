@@ -27,7 +27,7 @@ points = Vector2Array( 42.9034, 41.2375, 32.142, 5.33034, 74.2194, 9.59154, 88.5
 custom_solver_bias = 0.0
 points = Vector2Array( 117.735, 5.59521, 88.5336, 32.3093, 74.2194, 9.59154, 101.166, -14.5863, 118.076, -13.1749 )
 
-[node name="TentacleAJoint" type="Node2D" groups=[ "tentacle" ]]
+[node name="TentacleAJoint" type="Node2D"]
 
 transform/pos = Vector2( -104.46, -44.7226 )
 z/z = -1
@@ -38,7 +38,7 @@ transform/pos = Vector2( -180, -122 )
 transform/rot = -209.924
 texture = ExtResource( 1 )
 
-[node name="Area2D" type="Area2D" parent="TentacleA"]
+[node name="Area2D" type="Area2D" parent="TentacleA" groups=[ "quad_tentacle" ]]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
