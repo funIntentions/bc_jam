@@ -12,27 +12,31 @@ shader/shading_mode = 0
 
 [node name="root" type="Node2D"]
 
-transform/pos = Vector2( 0, 47 )
+[node name="offset" type="Node2D" parent="."]
 
-[node name="Leafy" type="Sprite" parent="."]
+transform/pos = Vector2( 34.0811, 0 )
+
+[node name="Leafy" type="Sprite" parent="offset"]
 
 material/material = SubResource( 1 )
 texture = ExtResource( 2 )
 script/script = ExtResource( 3 )
 mask_viewport_path = NodePath("../Viewport")
 
-[node name="GateViewportSprite" type="ViewportSprite" parent="."]
+[node name="GateViewportSprite" type="ViewportSprite" parent="offset"]
 
 visibility/opacity = 0.0
 viewport = NodePath("../Viewport")
 
-[node name="Gate1" parent="." instance=ExtResource( 4 )]
+[node name="Gate1" parent="offset" instance=ExtResource( 4 )]
 
 visibility/opacity = 0.0
 transform/pos = Vector2( -16, 42 )
+script/script = null
 
-[node name="Viewport" type="Viewport" parent="."]
+[node name="Viewport" type="Viewport" parent="offset"]
 
+editor/display_folded = true
 rect = Rect2( 0, 0, 675, 600 )
 own_world = false
 world = null
@@ -48,7 +52,7 @@ audio_listener/enable_3d = false
 physics/object_picking = false
 gui/disable_input = false
 
-[node name="Gate" parent="Viewport" instance=ExtResource( 4 )]
+[node name="Gate" parent="offset/Viewport" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 320, 340 )
 

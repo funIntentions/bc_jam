@@ -41,22 +41,22 @@ trigger = false
 
 [node name="Tentacle 1" parent="Body" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( -63.0843, -55.734 )
-transform/rot = -223.85
+transform/pos = Vector2( -20, -8 )
+transform/rot = -30.0
 
 [node name="Tentacle 4" parent="Body" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( -56.1526, 59.6998 )
-transform/rot = -129.802
+transform/pos = Vector2( -30, 21 )
+transform/rot = 30.0
 
 [node name="Tentacle 2" parent="Body" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 71.4312, -42.8074 )
-transform/rot = 32.4795
+transform/pos = Vector2( 16, -10 )
+transform/rot = -140.0
 
 [node name="Tentacle 3" parent="Body" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 54.8603, 60.6083 )
-transform/rot = -46.2278
+transform/pos = Vector2( 24, 18 )
+transform/rot = 140.0
 
 

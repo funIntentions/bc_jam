@@ -12,9 +12,7 @@ func is_touching():
 func _on_area_enter(area):
 	if area.is_in_group("quad_body"):
 		touching_node = area
-		print(is_touching())
 
 func _on_area_exit(area):
 	if area == touching_node:
 		touching_node = null
-		print(is_touching())
