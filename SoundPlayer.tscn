@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://Sounds/split1.smp" type="Sample" id=1]
+[ext_resource path="res://Sounds/split2.smp" type="Sample" id=2]
+[ext_resource path="res://Sounds/split3.smp" type="Sample" id=3]
+[ext_resource path="res://Sounds/split4.smp" type="Sample" id=4]
+
+[sub_resource type="SampleLibrary" id=1]
+
+samples/split1 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 1 ) }
+samples/split2 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 2 ) }
+samples/split3 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 3 ) }
+samples/split4 = { "db":0.0, "pitch":1.0, "sample":ExtResource( 4 ) }
+
+[node name="SamplePlayer2D" type="SamplePlayer2D"]
+
+params/volume_db = 0.0
+params/pitch_scale = 1.0
+params/attenuation/min_distance = 1.0
+params/attenuation/max_distance = 2048.0
+params/attenuation/distance_exp = 1.0
+config/polyphony = 1
+config/samples = SubResource( 1 )
+config/pitch_random = 0.0
+
+
