@@ -3,7 +3,7 @@
 [ext_resource path="res://Gate/GateVariables.gd" type="Script" id=1]
 [ext_resource path="res://Quadupus.tscn" type="PackedScene" id=2]
 [ext_resource path="res://TestMask/FollowMouse.gd" type="Script" id=3]
-[ext_resource path="res://Gate/RockGate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Gate/BoatGate.tscn" type="PackedScene" id=4]
 
 [node name="Game" type="Node2D"]
 
@@ -37,7 +37,7 @@ script/script = ExtResource( 1 )
 
 [node name="GateRoot" parent="." instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 798.058, 284.481 )
+transform/pos = Vector2( 762.812, 261.823 )
 
 
 [editable path="Quadupus"]
