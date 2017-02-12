@@ -13,7 +13,7 @@
 
 script/source = "extends Node2D\n\nfunc _ready():\n\tpass\n\n"
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=2]
 
 script/source = "extends Node2D\n\nvar gate = load(\"res://Gate/LeafGate.tscn\")\nvar timer\nvar gateInstance\n\nfunc _ready():\n\ttimer = get_node(\"Timer\")\n\ttimer.connect(\"timeout\", self, \"spawnGate\")\n\ttimer.set_wait_time(7)\n\ttimer.start()\n\nfunc spawnGate():\n\tif(gateInstance):\n\t\tgateInstance.free()\n\tvar gate_variables = get_node(\"/root/Game/GateVariables\")\n\tgate_variables.gen_rotations()\n\tgateInstance = gate.instance()\n\tadd_child(gateInstance)\n\tvar camPosition = (get_parent().get_child(0).get_pos())\n\tset_pos(Vector2(camPosition.x + 900, camPosition.y + (rand_range(-100,100))))"
 
@@ -167,7 +167,7 @@ autostart = false
 
 [node name="GateSpawner" type="Node2D" parent="."]
 
-script/script = SubResource( 3 )
+script/script = SubResource( 2 )
 
 [node name="Timer" type="Timer" parent="GateSpawner"]
 

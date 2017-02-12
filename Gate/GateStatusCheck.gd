@@ -24,10 +24,11 @@ func _process(delta):
 		if touch_count >= 5:
 			print("Everything is touching")
 			set_z(10) #Set the z to a high number so that the player appears to go behind it
+			var string = "voice"+str(int(rand_range(1,4)))
+			get_node("GateSuccess").play(string)
 			checked = true
 		
 		if player_x >= gate_x:
-			print("Passed")
-			var sampleString = "split"+str(int(rand_range(1,6)))
-			get_node("SamplePlayer2D").play(sampleString)
+			var sampleString = "split"+str(int(rand_range(1,5)))
+			get_node("GateFailHits").play(sampleString)
 			checked = true

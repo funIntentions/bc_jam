@@ -23,19 +23,20 @@ func _process(delta):
 		if(Input.get_joy_axis(0,0) > 0 &&  get_node("BodySprite/TentacleAJoint").get_rot() < rotationLimit):
 			get_node("BodySprite/TentacleAJoint").rotate(Input.get_joy_axis(0,0)*delta*rotationSpeed)
 	if(Input.is_action_pressed("p1_radial_movement_b")):
-		if(Input.get_joy_axis(0,2) > 0 &&  get_node("BodySprite/TentacleBJoint").get_rot() < rotationLimit):
+		if(Input.get_joy_axis(0,2) > 0 &&  get_node("BodySprite/TentacleBJoint").get_rot() < 3):
 		 	get_node("BodySprite/TentacleBJoint").rotate(Input.get_joy_axis(0,2)*delta*rotationSpeed)
-		if(Input.get_joy_axis(0,2) < 0 &&  get_node("BodySprite/TentacleBJoint").get_rot() > -rotationLimit):
+		if(Input.get_joy_axis(0,2) < 0 &&  get_node("BodySprite/TentacleBJoint").get_rot() > 0):
 			 get_node("BodySprite/TentacleBJoint").rotate(Input.get_joy_axis(0,2)*delta*rotationSpeed)
 	if(Input.is_action_pressed("p2_radial_movement_c")):
-		if(Input.get_joy_axis(1,0) > 0 &&  get_node("BodySprite/TentacleCJoint").get_rot() < rotationLimit):
-			get_node("BodySprite/TentacleCJoint").rotate(Input.get_joy_axis(1,0)*delta*rotationSpeed)
-		if(Input.get_joy_axis(1,0) < 0 &&  get_node("BodySprite/TentacleCJoint").get_rot() > -rotationLimit):
-			get_node("BodySprite/TentacleCJoint").rotate(Input.get_joy_axis(1,0)*delta*rotationSpeed)
+		print(get_node("BodySprite/TentacleCJoint").get_rot())
+		if(Input.get_joy_axis(1,0) > 0 &&  get_node("BodySprite/TentacleCJoint").get_rot() > 3.2):
+			get_node("BodySprite/TentacleCJoint").rotate(Input.get_joy_axis(1,0)*delta*-rotationSpeed)
+		if(Input.get_joy_axis(1,0) < 0 &&  get_node("BodySprite/TentacleCJoint").get_rot() < 6):
+			get_node("BodySprite/TentacleCJoint").rotate(Input.get_joy_axis(1,0)*delta*-rotationSpeed)
 	if(Input.is_action_pressed("p2_radial_movement_d")):
-		if(Input.get_joy_axis(1,2) > 0 &&  get_node("BodySprite/TentacleDJoint").get_rot() < rotationLimit):
+		if(Input.get_joy_axis(1,2) > 0 &&  get_node("BodySprite/TentacleDJoint").get_rot() < 4.5):
 			get_node("BodySprite/TentacleDJoint").rotate(Input.get_joy_axis(1,2)*delta*rotationSpeed)
-		if(Input.get_joy_axis(1,2) < 0 &&  get_node("BodySprite/TentacleDJoint").get_rot() > -rotationLimit):
+		if(Input.get_joy_axis(1,2) < 0 &&  get_node("BodySprite/TentacleDJoint").get_rot() > 1.5):
 			get_node("BodySprite/TentacleDJoint").rotate(Input.get_joy_axis(1,2)*delta*rotationSpeed)
 			
 	if(Input.is_action_pressed("p1_right_trigger")):

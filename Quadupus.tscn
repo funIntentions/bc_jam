@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://TentacleControl.gd" type="Script" id=1]
-[ext_resource path="res://quadra/body.tex" type="Texture" id=2]
+[ext_resource path="res://Sprites/body.png" type="Texture" id=2]
 [ext_resource path="res://TentacleJoint.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -36,6 +36,7 @@ verticalMoveSpeed = Vector2( 1, 1 )
 [node name="BodySprite" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
+offset = Vector2( -20, 15 )
 
 [node name="TentacleAJoint" parent="BodySprite" instance=ExtResource( 3 )]
 
