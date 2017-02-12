@@ -10,4 +10,3 @@ func _ready():
 	var mask_viewport = get_node(mask_viewport_path)
 	var mask_texture = mask_viewport.get_render_target_texture()
 	get_material().set_shader_param("Mask", mask_texture)
-

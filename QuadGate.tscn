@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://Gate/GateKeeper.gd" type="Script" id=1]
-[ext_resource path="res://Gate/GateBody.gd" type="Script" id=2]
-[ext_resource path="res://gate/blackhole.tex" type="Texture" id=3]
-[ext_resource path="res://tentacle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Gate/GateBody.gd" type="Script" id=1]
+[ext_resource path="res://gate/blackhole.tex" type="Texture" id=2]
+[ext_resource path="res://tentacle.tscn" type="PackedScene" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -11,8 +10,6 @@ custom_solver_bias = 0.0
 points = Vector2Array( 0.0771971, -55.3523, 31.7835, -46.2934, 52.4896, -19.1166, 49.2543, 18.4133, 23.3716, 37.1782, -18.6877, 37.8253, -44.5704, 18.4133, -50.394, -26.2343, -25.8055, -46.9405 )
 
 [node name="Gate" type="Node2D"]
-
-script/script = ExtResource( 1 )
 
 [node name="Body" type="Area2D" parent="." groups=[ "gate_piece" ]]
 
@@ -24,12 +21,12 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = ExtResource( 2 )
+script/script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="Body"]
 
 transform/scale = Vector2( 0.18, 0.25 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body"]
 
@@ -39,24 +36,24 @@ polygon = Vector2Array( 0.0771971, -55.3523, 31.7835, -46.2934, 52.4896, -19.116
 shape_range = Vector2( 0, 0 )
 trigger = false
 
-[node name="Tentacle 1" parent="Body" instance=ExtResource( 4 )]
+[node name="Tentacle 1" parent="Body" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -63.0843, -55.734 )
-transform/rot = -223.85
+transform/pos = Vector2( -20, -8 )
+transform/rot = 320.0
 
-[node name="Tentacle 4" parent="Body" instance=ExtResource( 4 )]
+[node name="Tentacle 4" parent="Body" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( -56.1526, 59.6998 )
-transform/rot = -129.802
+transform/pos = Vector2( -30, 21 )
+transform/rot = 40.0
 
-[node name="Tentacle 2" parent="Body" instance=ExtResource( 4 )]
+[node name="Tentacle 2" parent="Body" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 71.4312, -42.8074 )
-transform/rot = 32.4795
+transform/pos = Vector2( 16, -10 )
+transform/rot = 220.0
 
-[node name="Tentacle 3" parent="Body" instance=ExtResource( 4 )]
+[node name="Tentacle 3" parent="Body" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 54.8603, 60.6083 )
-transform/rot = -46.2278
+transform/pos = Vector2( 24, 18 )
+transform/rot = 140.0
 
 
