@@ -28,7 +28,6 @@ func _process(delta):
 		if(Input.get_joy_axis(0,2) < 0 &&  get_node("BodySprite/TentacleBJoint").get_rot() > 0):
 			 get_node("BodySprite/TentacleBJoint").rotate(Input.get_joy_axis(0,2)*delta*rotationSpeed)
 	if(Input.is_action_pressed("p2_radial_movement_c")):
-		print(get_node("BodySprite/TentacleCJoint").get_rot())
 		if(Input.get_joy_axis(1,0) > 0 &&  get_node("BodySprite/TentacleCJoint").get_rot() > 3.2):
 			get_node("BodySprite/TentacleCJoint").rotate(Input.get_joy_axis(1,0)*delta*-rotationSpeed)
 		if(Input.get_joy_axis(1,0) < 0 &&  get_node("BodySprite/TentacleCJoint").get_rot() < 6):
